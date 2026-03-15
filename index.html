@@ -1,1294 +1,885 @@
 <!doctype html>
 <html class="light" lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Web Solidaria - Impulsando tu negocio, sanando a Blanca</title>
 
-    <!-- Tailwind CSS (Script CDN) -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#ff6b35",
-              secondary: "#f7c59f",
-              accent: "#ef476f",
-              "warm-cream": "#fffcf2",
-              "background-light": "#fff9f5",
-              "background-dark": "#2b1a12",
-            },
-            fontFamily: {
-              display: ["Be Vietnam Pro", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.5rem",
-              lg: "1rem",
-              xl: "1.5rem",
-              full: "9999px",
-            },
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Web Solidaria - Impulsando tu negocio, sanando a Blanca</title>
+
+  <!-- Tailwind CSS (Script CDN) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#ff6b35",
+            secondary: "#f7c59f",
+            accent: "#ef476f",
+            "warm-cream": "#fffcf2",
+            "background-light": "#fff9f5",
+            "background-dark": "#2b1a12",
+          },
+          fontFamily: {
+            display: ["Be Vietnam Pro", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "1rem",
+            xl: "1.5rem",
+            full: "9999px",
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <!-- Google Fonts & Material Icons -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;700;900&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+  <!-- Google Fonts & Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;700;900&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <!-- CSS Centralizado -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+  <!-- CSS Centralizado -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-  <body
-    class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-orange-50 antialiased overflow-x-hidden"
-  >
-    <!-- Progress Bar -->
-    <div
-      id="scroll-progress"
-      class="fixed top-0 left-0 h-[4px] bg-gradient-to-r from-primary via-amber-400 to-[#ef476f] z-[10001] w-0 shadow-[0_0_10px_#ff6b35]"
-    ></div>
+<body
+  class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-orange-50 antialiased overflow-x-hidden">
+  <!-- Progress Bar -->
+  <div id="scroll-progress"
+    class="fixed top-0 left-0 h-[4px] bg-gradient-to-r from-primary via-amber-400 to-[#ef476f] z-[10001] w-0 shadow-[0_0_10px_#ff6b35]">
+  </div>
 
-    <!-- Custom Cursor -->
-    <div id="custom-cursor" class="hidden md:block"></div>
+  <!-- Custom Cursor -->
+  <div id="custom-cursor" class="hidden md:block"></div>
 
-    <!-- Preloader de Patita -->
-    <div id="preloader">
-      <svg
-        class="paw-mask"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12,2C10.9,2,10,2.9,10,4c0,1.1,0.9,2,2,2s2-0.9,2-2C14,2.9,13.1,2,12,2z M7,5C5.9,5,5,5.9,5,7s0.9,2,2,2s2-0.9,2-2S8.1,5,7,5z M17,5c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S18.1,5,17,5z M12,8c-1.7,0-3,1.3-3,3s1.3,3,3,3s3-1.3,3-3S13.7,8,12,8z M4.5,10C3.1,10,2,11.1,2,12.5S3.1,15,4.5,15s2.5-1.1,2.5-2.5S5.9,10,4.5,10z M19.5,10c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S20.9,10,19.5,10z M12,15c-3.3,0-6,2.7-6,6h12C18,17.7,15.3,15,12,15z"
-        />
-      </svg>
+  <!-- Preloader de Patita -->
+  <div id="preloader">
+    <svg class="paw-mask" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12,2C10.9,2,10,2.9,10,4c0,1.1,0.9,2,2,2s2-0.9,2-2C14,2.9,13.1,2,12,2z M7,5C5.9,5,5,5.9,5,7s0.9,2,2,2s2-0.9,2-2S8.1,5,7,5z M17,5c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S18.1,5,17,5z M12,8c-1.7,0-3,1.3-3,3s1.3,3,3,3s3-1.3,3-3S13.7,8,12,8z M4.5,10C3.1,10,2,11.1,2,12.5S3.1,15,4.5,15s2.5-1.1,2.5-2.5S5.9,10,4.5,10z M19.5,10c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S20.9,10,19.5,10z M12,15c-3.3,0-6,2.7-6,6h12C18,17.7,15.3,15,12,15z" />
+    </svg>
+  </div>
+
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary/20 blur-[120px] animate-blob">
     </div>
+    <div class="absolute bottom-[10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-accent/15 blur-[100px] animate-blob"
+      style="animation-delay: -2s"></div>
+    <div class="absolute top-[30%] right-[10%] w-[30%] h-[30%] rounded-full bg-amber-400/10 blur-[80px] animate-blob"
+      style="animation-delay: -5s"></div>
+  </div>
 
-    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-      <div
-        class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary/20 blur-[120px] animate-blob"
-      ></div>
-      <div
-        class="absolute bottom-[10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-accent/15 blur-[100px] animate-blob"
-        style="animation-delay: -2s"
-      ></div>
-      <div
-        class="absolute top-[30%] right-[10%] w-[30%] h-[30%] rounded-full bg-amber-400/10 blur-[80px] animate-blob"
-        style="animation-delay: -5s"
-      ></div>
-    </div>
+  <!-- Top Navigation Bar -->
+  <header
+    class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-white/20 bg-white/60 dark:bg-background-dark/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-3xl">database</span>
+          <!-- CUSTOM TEXT: Nombre del sitio / Logo texto -->
+          <span class="text-lg font-black tracking-tighter text-slate-900 dark:text-white uppercase">WEB
+            SOLIDARIA</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-6">
+          <!-- CUSTOM LINK: Enlaces del navbar -->
+          <a class="text-sm font-medium hover:text-primary transition-colors" href="#">inicio</a>
+          <a class="text-sm font-medium hover:text-primary transition-colors" href="#proposito">proposito</a>
+          <a class="text-sm font-medium hover:text-primary transition-colors" href="#catalogo">catalogo</a>
+          <a class="text-sm font-medium hover:text-primary transition-colors" href="#mantenimiento">mantenimiento</a>
+          <a class="text-sm font-medium hover:text-primary transition-colors" href="#preguntas">preguntas</a>
+          <a class="text-sm font-medium hover:text-primary transition-colors" href="#contacto">contacto</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <!-- CUSTOM LINK: Botón Empezar (ej. link de whatsapp o contacto) -->
+          <a href="#contacto"
+            class="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-xl text-sm font-bold transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:scale-105 active:scale-95 bg-gradient-to-r from-primary to-orange-500">
+            Empezar
+          </a>
 
-    <!-- Top Navigation Bar -->
-    <header
-      class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-white/20 bg-white/60 dark:bg-background-dark/60"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16 sm:h-20">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary text-3xl"
-              >database</span
-            >
-            <!-- CUSTOM TEXT: Nombre del sitio / Logo texto -->
-            <span
-              class="text-lg font-black tracking-tighter text-slate-900 dark:text-white uppercase"
-              >WEB SOLIDARIA</span
-            >
-          </div>
-          <nav class="hidden md:flex items-center gap-6">
-            <!-- CUSTOM LINK: Enlaces del navbar -->
-            <a
-              class="text-sm font-medium hover:text-primary transition-colors"
-              href="#"
-              >inicio</a
-            >
-            <a
-              class="text-sm font-medium hover:text-primary transition-colors"
-              href="#proposito"
-              >proposito</a
-            >
-            <a
-              class="text-sm font-medium hover:text-primary transition-colors"
-              href="#catalogo"
-              >catalogo</a
-            >
-            <a
-              class="text-sm font-medium hover:text-primary transition-colors"
-              href="#catalogo"
-              >Términos del Servicio</a
-            >
-            <a
-              class="text-sm font-medium hover:text-primary transition-colors"
-              href="#preguntas"
-              >preguntas</a
-            >
-            <a
-              class="text-sm font-medium hover:text-primary transition-colors"
-              href="#contacto"
-              >contacto</a
-            >
-          </nav>
-          <div class="flex items-center gap-4">
-            <!-- CUSTOM LINK: Botón Empezar (ej. link de whatsapp o contacto) -->
-            <a
-              href="#contacto"
-              class="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-xl text-sm font-bold transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:scale-105 active:scale-95 bg-gradient-to-r from-primary to-orange-500"
-            >
-              Empezar
-            </a>
-
-            <!-- Botón Menú Móvil -->
-            <button
-              id="mobile-menu-btn"
-              class="md:hidden size-12 flex items-center justify-center rounded-xl bg-slate-100/50 dark:bg-slate-800/50 text-slate-800 dark:text-white hover:text-primary transition-all border border-slate-200 dark:border-slate-700"
-              aria-label="Abrir menú"
-            >
-              <span class="material-symbols-outlined text-3xl">menu</span>
-            </button>
-          </div>
+          <!-- Botón Menú Móvil -->
+          <button id="mobile-menu-btn"
+            class="md:hidden size-12 flex items-center justify-center rounded-xl bg-slate-100/50 dark:bg-slate-800/50 text-slate-800 dark:text-white hover:text-primary transition-all border border-slate-200 dark:border-slate-700"
+            aria-label="Abrir menú">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+          </button>
         </div>
       </div>
+    </div>
 
-      <!-- Contenedor Menú Móvil -->
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-background-dark/95 backdrop-blur-xl border-b border-primary/20 shadow-2xl flex-col py-8 px-6 gap-8 z-50 items-center text-center"
-      >
-        <!-- CUSTOM LINK: Enlaces del navbar móvil -->
-        <a
-          class="text-xl font-bold text-slate-800 dark:text-white hover:text-primary transition-colors mobile-link w-full py-2"
-          href="#"
-          >inicio</a
-        >
-        <a
-          class="text-xl font-bold text-slate-800 dark:text-white hover:text-primary transition-colors mobile-link w-full py-2"
-          href="#proposito"
-          >proposito</a
-        >
-        <a
-          class="text-xl font-bold text-slate-800 dark:text-white hover:text-primary transition-colors mobile-link w-full py-2"
-          href="#catalogo"
-          >catalogo</a
-        >
-        <a
-          class="text-xl font-bold text-slate-800 dark:text-white hover:text-primary transition-colors mobile-link w-full py-2"
-          href="#catalogo"
-          >Términos del Servicio</a
-        >
-        <a
-          class="text-xl font-bold text-slate-800 dark:text-white hover:text-primary transition-colors mobile-link w-full py-2"
-          href="#preguntas"
-          >preguntas</a
-        >
-        <a
-          class="text-xl font-bold text-slate-800 dark:text-white hover:text-primary transition-colors mobile-link w-full py-2"
-          href="#contacto"
-          >contacto</a
-        >
-        <!-- CUSTOM LINK: Botón Empezar móvil -->
-        <a
-          href="#contacto"
-          class="w-full max-w-xs bg-primary text-white px-6 py-4 rounded-xl text-lg font-bold transition-all shadow-lg shadow-primary/20 bg-gradient-to-r from-primary to-orange-500 mobile-link"
-        >
-          Empezar
+    <!-- Contenedor Menú Móvil -->
+    <div id="mobile-menu"
+      class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-background-dark/95 backdrop-blur-xl border-b border-primary/20 shadow-2xl flex-col py-8 px-6 gap-8 z-50 items-center text-center">
+      <!-- CUSTOM LINK: Enlaces del navbar móvil -->
+      <a class="text-xl font-bold text-slate-800 dark:text-white hover:text-primary transition-colors mobile-link w-full py-2"
+        href="#">inicio</a>
+      <a class="text-xl font-bold text-slate-800 dark:text-white hover:text-primary transition-colors mobile-link w-full py-2"
+        href="#proposito">proposito</a>
+      <a class="text-xl font-bold text-slate-800 dark:text-white hover:text-primary transition-colors mobile-link w-full py-2"
+        href="#catalogo">catalogo</a>
+      <a class="text-xl font-bold text-slate-800 dark:text-white hover:text-primary transition-colors mobile-link w-full py-2"
+        href="#mantenimiento">mantenimiento</a>
+      <a class="text-xl font-bold text-slate-800 dark:text-white hover:text-primary transition-colors mobile-link w-full py-2"
+        href="#preguntas">preguntas</a>
+      <a class="text-xl font-bold text-slate-800 dark:text-white hover:text-primary transition-colors mobile-link w-full py-2"
+        href="#contacto">contacto</a>
+      <!-- CUSTOM LINK: Botón Empezar móvil -->
+      <a href="#contacto"
+        class="w-full max-w-xs bg-primary text-white px-6 py-4 rounded-xl text-lg font-bold transition-all shadow-lg shadow-primary/20 bg-gradient-to-r from-primary to-orange-500 mobile-link">
+        Empezar
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Hero Section -->
+    <section class="py-12 sm:py-20 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
+      <div class="order-2 lg:order-1 flex flex-col gap-8 items-center text-center lg:items-start lg:text-left">
+        <div class="space-y-4">
+          <!-- CUSTOM TEXT: Título principal -->
+          <h1
+            class="text-5xl sm:text-7xl font-black text-slate-900 dark:text-white leading-[0.9] tracking-tighter hover:glitch-hover"
+            style="letter-spacing: -0.05em">
+            WEB <br />
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-[#ff6b35] via-[#ef476f] to-[#ffd166] animate-gradient-text typewriter">SOLIDARIA</span>
+          </h1>
+          <!-- CUSTOM TEXT: Descripción principal -->
+          <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
+            Creamos landing pages rápidas y modernas para impulsar tu negocio
+            mientras apoyas una causa noble: la recuperacion de Blanca.
+          </p>
+        </div>
+        <!-- CUSTOM LINK: Botón de acción principal -->
+        <a href="#catalogo"
+          class="magnetic-btn btn-ripple btn-particles w-full sm:w-fit text-center bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-xl shadow-primary/30 hover:shadow-primary/40 hover:scale-105 active:scale-95 bg-gradient-to-r from-primary to-orange-500">
+          [Ver Catálogo / Empezar Proyecto]
         </a>
       </div>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Hero Section -->
-      <section
-        class="py-12 sm:py-20 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal"
-      >
+      <div class="order-1 lg:order-2 relative group">
         <div
-          class="order-2 lg:order-1 flex flex-col gap-8 items-center text-center lg:items-start lg:text-left"
-        >
-          <div class="space-y-4">
-            <!-- CUSTOM TEXT: Título principal -->
-            <h1
-              class="text-5xl sm:text-7xl font-black text-slate-900 dark:text-white leading-[0.9] tracking-tighter hover:glitch-hover"
-              style="letter-spacing: -0.05em"
-            >
-              WEB <br />
-              <span
-                class="bg-clip-text text-transparent bg-gradient-to-r from-[#ff6b35] via-[#ef476f] to-[#ffd166] animate-gradient-text typewriter"
-                >SOLIDARIA</span
-              >
-            </h1>
-            <!-- CUSTOM TEXT: Descripción principal -->
-            <p
-              class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed"
-            >
-              Creamos landing pages rápidas y modernas para impulsar tu negocio
-              mientras apoyas una causa noble: la cirugía de Blanca.
-            </p>
-          </div>
-          <!-- CUSTOM LINK: Botón de acción principal -->
-          <a
-            href="#catalogo"
-            class="magnetic-btn btn-ripple btn-particles w-full sm:w-fit text-center bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-xl shadow-primary/30 hover:shadow-primary/40 hover:scale-105 active:scale-95 bg-gradient-to-r from-primary to-orange-500"
-          >
-            [Ver Catálogo / Empezar Proyecto]
+          class="absolute -inset-4 border-2 border-primary rounded-2xl opacity-50 group-hover:opacity-100 transition-opacity">
+        </div>
+
+        <div
+          class="relative rounded-xl overflow-hidden aspect-video flex items-center justify-center border-4 border-white dark:border-slate-700 shadow-2xl">
+          <a href="#catalogo" class="w-full h-full block">
+            <!-- ============================================== -->
+            <!-- ACA VA IMG 1: IMAGEN HERO PRINCIPAL (LANDING)  -->
+            <!-- ============================================== -->
+            <img class="w-full h-full object-cover animate-floating animate-parallax clip-reveal" data-speed="0.2"
+              data-alt="Modern high tech business landing page design mockup" src="recursos/hero_main.jpeg" />
           </a>
         </div>
-        <div class="order-1 lg:order-2 relative group">
-          <div
-            class="absolute -inset-4 border-2 border-primary rounded-2xl opacity-50 group-hover:opacity-100 transition-opacity"
-          ></div>
+      </div>
+    </section>
 
-          <div
-            class="relative rounded-xl overflow-hidden aspect-video flex items-center justify-center border-4 border-white dark:border-slate-700 shadow-2xl"
-          >
-            <a href="#catalogo" class="w-full h-full block">
-              <!-- ============================================== -->
-              <!-- ACA VA IMG 1: IMAGEN HERO PRINCIPAL (LANDING)  -->
-              <!-- ============================================== -->
-              <img
-                class="w-full h-full object-cover animate-floating animate-parallax clip-reveal"
-                data-speed="0.2"
-                data-alt="Modern high tech business landing page design mockup"
-                src="recursos/hero_main.jpeg"
-              />
-            </a>
-          </div>
-        </div>
-      </section>
+    <!-- Propósito Section -->
+    <section class="py-20 border-t border-primary/10 reveal" id="proposito">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start">
+          <h3 class="text-primary font-bold tracking-widest uppercase text-sm">
+            PROPOSITO
+          </h3>
+          <!-- CUSTOM TEXT: Título propósito -->
+          <h2 class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white leading-[1.1] mb-2">
+            Blanca es mi familia
+          </h2>
+          <p class="text-primary font-bold text-lg mb-8 italic">
+            Misión: Salvar a Blanca
+          </p>
 
-      <!-- Propósito Section -->
-      <section class="py-20 border-t border-primary/10 reveal" id="proposito">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div
-            class="space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start"
-          >
-            <h3
-              class="text-primary font-bold tracking-widest uppercase text-sm"
-            >
-              PROPOSITO
-            </h3>
-            <!-- CUSTOM TEXT: Título propósito -->
-            <h2
-              class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white leading-[1.1] mb-2"
-            >
-              Blanca es mi familia
-            </h2>
-            <p class="text-primary font-bold text-lg mb-8 italic">
-              Misión: Salvar a Blanca
+          <div class="space-y-6 text-slate-600 dark:text-slate-400 text-lg sm:text-xl leading-relaxed">
+            <p>
+              Hace unos días, tras desaparecer y regresar con una herida
+              grave, tuvo que ser operada de urgencia. Hoy se encuentra en
+              plena recuperación, pero los costos de la cirugía, las suturas y
+              su medicación diaria superan mis posibilidades actuales.
             </p>
 
-            <div
-              class="space-y-6 text-slate-600 dark:text-slate-400 text-lg sm:text-xl leading-relaxed"
-            >
-              <p>
-                Hace unos días, tras desaparecer y regresar con una herida
-                grave, tuvo que ser operada de urgencia. Hoy se encuentra en
-                plena recuperación, pero los costos de la cirugía, las suturas y
-                su medicación diaria superan mis posibilidades actuales.
-              </p>
+            <p>
+              Como desarrolladora web recién formada, estoy transformando mi
+              búsqueda del primer empleo en una
+              <strong>misión para salvarla</strong>.
+            </p>
 
-              <p>
-                Como desarrolladora web recién formada, estoy transformando mi
-                búsqueda del primer empleo en una
-                <strong>misión para salvarla</strong>.
-              </p>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                <div
-                  class="p-4 bg-primary/5 border border-primary/20 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <p class="text-primary font-black uppercase text-xs mb-1">
-                    Mi meta
-                  </p>
-                  <p
-                    class="text-slate-800 dark:text-slate-200 font-medium text-base"
-                  >
-                    Solventar cada control y medicina que Blanca necesita para
-                    sanar.
-                  </p>
-                </div>
-                <div
-                  class="p-4 bg-accent/5 border border-accent/20 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <p class="text-accent font-black uppercase text-xs mb-1">
-                    Tu beneficio
-                  </p>
-                  <p
-                    class="text-slate-800 dark:text-slate-200 font-medium text-base"
-                  >
-                    Una web profesional a un costo solidario, con descuento y
-                    sin gastos de mantenimiento.
-                  </p>
-                </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+              <div
+                class="p-4 bg-primary/5 border border-primary/20 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                <p class="text-primary font-black uppercase text-xs mb-1">
+                  Mi meta
+                </p>
+                <p class="text-slate-800 dark:text-slate-200 font-medium text-base">
+                  Solventar cada control y medicina que Blanca necesita para
+                  sanar.
+                </p>
               </div>
-
-              <p
-                class="text-2xl font-black text-slate-900 dark:text-white pt-6 tracking-tight"
-              >
-                Contratando tu página hoy, me ayudás a que Blanca vuelva a estar
-                bien.
-              </p>
-
-              <p
-                class="text-sm border-t border-slate-100 dark:border-slate-800 pt-4 opacity-70"
-              >
-                Si no necesitás una web, compartir nuestra historia es una ayuda
-                inmensa para nosotras.
-              </p>
+              <div
+                class="p-4 bg-accent/5 border border-accent/20 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                <p class="text-accent font-black uppercase text-xs mb-1">
+                  Tu beneficio
+                </p>
+                <p class="text-slate-800 dark:text-slate-200 font-medium text-base">
+                  Una web profesional a un costo solidario, con descuento y
+                  gastos de mantenimiento bajos para el mercado.
+                </p>
+              </div>
             </div>
+
+            <p class="text-2xl font-black text-slate-900 dark:text-white pt-6 tracking-tight">
+              Contratando tu página hoy, me ayudás a que Blanca vuelva a estar
+              bien.
+            </p>
+
+            <p class="text-sm border-t border-slate-100 dark:border-slate-800 pt-4 opacity-70">
+              Si no necesitás una web, compartir nuestra historia es una ayuda
+              inmensa para nosotras.
+            </p>
           </div>
+        </div>
+        <div
+          class="relative group/carousel bg-slate-100 dark:bg-slate-800/50 p-8 rounded-3xl border border-primary/5 backdrop-blur-xl bg-white/40 dark:bg-slate-800/40 border-white/20 shadow-2xl">
+          <div class="flex items-center justify-between gap-4">
+            <button
+              class="prev-btn size-12 rounded-full bg-white dark:bg-slate-700 shadow-lg flex items-center justify-center text-primary hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <div
+              class="flex-1 aspect-square rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-slate-800 flex items-center justify-center">
+              <!-- ============================================== -->
+              <!-- ACA VA IMG 2: FOTO DE BLANCA (MASCOTA/GATITA)  -->
+              <!-- ============================================== -->
+              <img class="carousel-img w-full h-full object-cover animate-floating animate-parallax clip-reveal"
+                data-speed="-0.1" data-alt="Beautiful white cat looking at the camera - Image 1"
+                src="recursos/blanca_1.jpeg" />
+
+              <!-- ============================================== -->
+              <!-- ACA VA IMG 2.1: FOTO DE BLANCA (OPCION 2)      -->
+              <!-- ============================================== -->
+              <img class="carousel-img w-full h-full object-cover animate-floating animate-parallax hidden"
+                data-speed="-0.1" data-alt="Beautiful white cat - Image 2" src="recursos/blanca_2.jpeg" />
+
+              <!-- ============================================== -->
+              <!-- ACA VA IMG 2.2: FOTO DE BLANCA (OPCION 3)      -->
+              <!-- ============================================== -->
+              <img class="carousel-img w-full h-full object-cover animate-floating animate-parallax hidden"
+                data-speed="-0.1" data-alt="Beautiful white cat - Image 3" src="recursos/blanca_3.jpeg" />
+            </div>
+            <button
+              class="next-btn size-12 rounded-full bg-white dark:bg-slate-700 shadow-lg flex items-center justify-center text-primary hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+          </div>
+          <div class="mt-6 flex justify-center">
+            <span class="material-symbols-outlined text-primary text-4xl">image</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee Infinito Separador -->
+    <div
+      class="w-full overflow-hidden bg-primary/10 border-y border-primary/20 py-4 relative flex items-center rotate-1 transform scale-105 z-10 shadow-lg">
+      <div
+        class="animate-marquee whitespace-nowrap flex gap-12 text-primary font-black uppercase text-xl md:text-2xl tracking-widest opacity-80">
+        <span>✦ MÁS AMOR</span><span>✦ MÁS CUIDADO</span><span>✦ MÁS SOLIDARIDAD</span><span>✦ REFUGIOS</span><span>✦
+          ADOPCIÓN</span> <span>✦ MÁS AMOR</span><span>✦ MÁS CUIDADO</span><span>✦ MÁS SOLIDARIDAD</span><span>✦
+          REFUGIOS</span><span>✦ ADOPCIÓN</span> <span>✦ MÁS AMOR</span><span>✦ MÁS CUIDADO</span><span>✦ MÁS
+          SOLIDARIDAD</span><span>✦ REFUGIOS</span><span>✦ ADOPCIÓN</span> <span>✦ MÁS AMOR</span><span>✦ MÁS
+          CUIDADO</span><span>✦ MÁS SOLIDARIDAD</span><span>✦ REFUGIOS</span><span>✦ ADOPCIÓN</span>
+      </div>
+    </div>
+
+    <!-- Términos del Servicio Section / Catálogo -->
+    <section class="py-20 reveal" id="catalogo">
+      <div class="text-center mb-16 px-4">
+        <!-- CUSTOM TEXT: Título catálogo -->
+        <h3 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">
+          MIRA MI PORTAFOLIO
+        </h3>
+        <h2
+          class="text-4xl sm:text-6xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tighter hover:glitch-hover">
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-amber-400 animate-gradient-text">ACA
+            HAY EJEMPLOS</span><br />DE LO QUE PUEDE SER TU PAGINA WEB
+        </h2>
+        <p
+          class="text-xl sm:text-2xl font-bold bg-primary/10 text-primary inline-block px-6 py-2 rounded-2xl mt-6 animate-pulse">
+          ¡Puedo crear lo que necesites y mucho mas!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- =========================== -->
+        <!-- Card 1 (Carrusel Veterinaria) -->
+        <!-- =========================== -->
+        <div
+          class="tilt-card glow-card bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-primary transition-all group shadow-sm hover:shadow-2xl overflow-hidden flex flex-col backdrop-blur-lg bg-white/30 dark:bg-slate-800/30 border-white/30">
           <div
-            class="relative group/carousel bg-slate-100 dark:bg-slate-800/50 p-8 rounded-3xl border border-primary/5 backdrop-blur-xl bg-white/40 dark:bg-slate-800/40 border-white/20 shadow-2xl"
-          >
-            <div class="flex items-center justify-between gap-4">
+            class="relative aspect-video bg-slate-100 dark:bg-slate-900 flex items-center justify-center group/carousel">
+            <!-- ============================================== -->
+            <!-- ACA VA IMG 3: CARRUSEL VETERINARIA (IMG 1)     -->
+            <!-- ============================================== -->
+            <img alt="Veterinaria demo 1" class="carousel-img w-full h-full object-cover"
+              src="recursos/vet/vet_1.jpg" />
+
+            <!-- ============================================== -->
+            <!-- ACA VA IMG 4: CARRUSEL VETERINARIA (IMG 2)     -->
+            <!-- ============================================== -->
+            <img alt="Veterinaria demo 2" class="carousel-img w-full h-full object-cover hidden"
+              src="recursos/vet/vet_2.jpg" />
+
+            <img alt="Veterinaria demo 3" class="carousel-img w-full h-full object-cover hidden"
+              src="recursos/vet/vet_3.jpg" />
+
+            <!-- ============================================== -->
+            <!-- ACA VA IMG 5.1: CARRUSEL VETERINARIA (IMG 4)   -->
+            <!-- ============================================== -->
+            <img alt="Veterinaria demo 4" class="carousel-img w-full h-full object-cover hidden"
+              src="recursos/vet/vet_4.jpg" />
+
+            <div
+              class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover/carousel:opacity-100 transition-opacity">
               <button
-                class="prev-btn size-12 rounded-full bg-white dark:bg-slate-700 shadow-lg flex items-center justify-center text-primary hover:scale-110 transition-transform"
-              >
+                class="prev-btn size-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary shadow-lg">
                 <span class="material-symbols-outlined">chevron_left</span>
               </button>
-              <div
-                class="flex-1 aspect-square rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-slate-800 flex items-center justify-center"
-              >
-                <!-- ============================================== -->
-                <!-- ACA VA IMG 2: FOTO DE BLANCA (MASCOTA/GATITA)  -->
-                <!-- ============================================== -->
-                <img
-                  class="carousel-img w-full h-full object-cover animate-floating animate-parallax clip-reveal"
-                  data-speed="-0.1"
-                  data-alt="Beautiful white cat looking at the camera - Image 1"
-                  src="recursos/blanca_1.jpeg"
-                />
-
-                <!-- ============================================== -->
-                <!-- ACA VA IMG 2.1: FOTO DE BLANCA (OPCION 2)      -->
-                <!-- ============================================== -->
-                <img
-                  class="carousel-img w-full h-full object-cover animate-floating animate-parallax hidden"
-                  data-speed="-0.1"
-                  data-alt="Beautiful white cat - Image 2"
-                  src="recursos/blanca_2.jpeg"
-                />
-
-                <!-- ============================================== -->
-                <!-- ACA VA IMG 2.2: FOTO DE BLANCA (OPCION 3)      -->
-                <!-- ============================================== -->
-                <img
-                  class="carousel-img w-full h-full object-cover animate-floating animate-parallax hidden"
-                  data-speed="-0.1"
-                  data-alt="Beautiful white cat - Image 3"
-                  src="recursos/blanca_3.jpeg"
-                />
-              </div>
               <button
-                class="next-btn size-12 rounded-full bg-white dark:bg-slate-700 shadow-lg flex items-center justify-center text-primary hover:scale-110 transition-transform"
-              >
+                class="next-btn size-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary shadow-lg">
                 <span class="material-symbols-outlined">chevron_right</span>
               </button>
             </div>
-            <div class="mt-6 flex justify-center">
-              <span class="material-symbols-outlined text-primary text-4xl"
-                >image</span
-              >
-            </div>
+          </div>
+          <div class="p-10 flex flex-col items-center text-center">
+            <span
+              class="material-symbols-outlined text-primary text-6xl mb-6 block group-hover:scale-110 transition-transform">pets</span>
+            <!-- CUSTOM TEXT: Título Card 1 -->
+            <h4 class="text-2xl font-black mb-4 uppercase tracking-tight">
+              VETERINARIAS
+            </h4>
+            <p class="text-slate-500 dark:text-slate-400 mb-8 text-base max-w-xs">
+              Diseño enfocado en el cuidado animal y agendamiento de turnos
+              optimizado para clínicas veterinarias.
+            </p>
+            <!-- CUSTOM TEXT: Precio Card 1 -->
+            <p class="text-3xl font-black text-primary mb-6">Desde $40.000</p>
+            <!-- NEW BUTTON: Ver Página -->
+            <a href="#"
+              class="btn-ripple btn-particles w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-3 rounded-xl font-bold hover:scale-[1.05] transition-transform text-center shadow-lg">VER
+              PAGINA</a>
           </div>
         </div>
-      </section>
 
-      <!-- Marquee Infinito Separador -->
-      <div
-        class="w-full overflow-hidden bg-primary/10 border-y border-primary/20 py-4 relative flex items-center rotate-1 transform scale-105 z-10 shadow-lg"
-      >
+        <!-- =========================== -->
+        <!-- Card 2 (Carrusel Panaderías) -->
+        <!-- =========================== -->
         <div
-          class="animate-marquee whitespace-nowrap flex gap-12 text-primary font-black uppercase text-xl md:text-2xl tracking-widest opacity-80"
-        >
-          <span>✦ MÁS AMOR</span><span>✦ MÁS CUIDADO</span
-          ><span>✦ MÁS SOLIDARIDAD</span><span>✦ REFUGIOS</span
-          ><span>✦ ADOPCIÓN</span> <span>✦ MÁS AMOR</span
-          ><span>✦ MÁS CUIDADO</span><span>✦ MÁS SOLIDARIDAD</span
-          ><span>✦ REFUGIOS</span><span>✦ ADOPCIÓN</span> <span>✦ MÁS AMOR</span
-          ><span>✦ MÁS CUIDADO</span><span>✦ MÁS SOLIDARIDAD</span
-          ><span>✦ REFUGIOS</span><span>✦ ADOPCIÓN</span> <span>✦ MÁS AMOR</span
-          ><span>✦ MÁS CUIDADO</span><span>✦ MÁS SOLIDARIDAD</span
-          ><span>✦ REFUGIOS</span><span>✦ ADOPCIÓN</span>
+          class="tilt-card glow-card bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-primary transition-all group shadow-sm hover:shadow-2xl overflow-hidden flex flex-col backdrop-blur-lg bg-white/30 dark:bg-slate-800/30 border-white/30">
+          <div
+            class="relative aspect-video bg-slate-100 dark:bg-slate-900 flex items-center justify-center group/carousel">
+            <!-- ============================================== -->
+            <!-- ACA VA IMG 6: CARRUSEL RESTAURANTES (IMG 1)      -->
+            <!-- ============================================== -->
+            <img alt="Restaurante demo 1" class="carousel-img w-full h-full object-cover"
+              src="recursos/rest/rest_1.jpg" />
+
+            <!-- ============================================== -->
+            <!-- ACA VA IMG 7: CARRUSEL RESTAURANTES (IMG 2)      -->
+            <!-- ============================================== -->
+            <img alt="Restaurante demo 2" class="carousel-img w-full h-full object-cover hidden"
+              src="recursos/rest/rest_2.jpg" />
+
+            <img alt="Restaurante demo 3" class="carousel-img w-full h-full object-cover hidden"
+              src="recursos/rest/rest_3.jpg" />
+
+            <!-- ============================================== -->
+            <!-- ACA VA IMG 8.1: CARRUSEL RESTAURANTES (IMG 4)    -->
+            <!-- ============================================== -->
+            <img alt="Restaurante demo 4" class="carousel-img w-full h-full object-cover hidden"
+              src="recursos/rest/rest_4.jpg" />
+
+            <div
+              class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover/carousel:opacity-100 transition-opacity">
+              <button
+                class="prev-btn size-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary shadow-lg">
+                <span class="material-symbols-outlined">chevron_left</span>
+              </button>
+              <button
+                class="next-btn size-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary shadow-lg">
+                <span class="material-symbols-outlined">chevron_right</span>
+              </button>
+            </div>
+          </div>
+          <div class="p-10 flex flex-col items-center text-center">
+            <span
+              class="material-symbols-outlined text-primary text-6xl mb-6 block group-hover:scale-110 transition-transform">restaurant</span>
+            <!-- CUSTOM TEXT: Título Card 2 -->
+            <h4 class="text-2xl font-black mb-4 uppercase tracking-tight">
+              RESTAURANTES
+            </h4>
+            <p class="text-slate-500 dark:text-slate-400 mb-8 text-base max-w-xs">
+              Menú digital interactivo y sistema de reservas diseñado para cautivar a tus comensales.
+            </p>
+            <!-- CUSTOM TEXT: Precio Card 2 -->
+            <p class="text-3xl font-black text-primary mb-6">Desde $40.000</p>
+            <!-- NEW BUTTON: Ver Página -->
+            <a href="https://proyect-hamburgueseria.vercel.app/" target="_blank"
+              class="btn-ripple btn-particles w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-3 rounded-xl font-bold hover:scale-[1.05] transition-transform text-center shadow-lg">VER
+              PAGINA</a>
+          </div>
+        </div>
+
+        <!-- =========================== -->
+        <!-- Card 3 (Carrusel Peluquerías)-->
+        <!-- =========================== -->
+        <div
+          class="tilt-card glow-card bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-primary transition-all group shadow-sm hover:shadow-2xl overflow-hidden flex flex-col backdrop-blur-lg bg-white/30 dark:bg-slate-800/30 border-white/30">
+          <div
+            class="relative aspect-video bg-slate-100 dark:bg-slate-900 flex items-center justify-center group/carousel">
+            <!-- ============================================== -->
+            <!-- ACA VA IMG 9: CARRUSEL CENTRO DE UÑAS (IMG 1)     -->
+            <!-- ============================================== -->
+            <img alt="Centro de Uñas demo 1" class="carousel-img w-full h-full object-cover"
+              src="recursos/uñas/unas_1.jpg" />
+
+            <!-- ============================================== -->
+            <!-- ACA VA IMG 10: CARRUSEL CENTRO DE UÑAS (IMG 2)    -->
+            <!-- ============================================== -->
+            <img alt="Centro de Uñas demo 2" class="carousel-img w-full h-full object-cover hidden"
+              src="recursos/uñas/unas_2.jpg" />
+
+            <img alt="Centro de Uñas demo 3" class="carousel-img w-full h-full object-cover hidden"
+              src="recursos/uñas/unas_3.jpg" />
+
+            <!-- ============================================== -->
+            <!-- ACA VA IMG 11.1: CARRUSEL CENTRO DE UÑAS (IMG 4)  -->
+            <!-- ============================================== -->
+            <img alt="Centro de Uñas demo 4" class="carousel-img w-full h-full object-cover hidden"
+              src="recursos/uñas/unas_4.jpg" />
+
+            <div
+              class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover/carousel:opacity-100 transition-opacity">
+              <button
+                class="prev-btn size-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary shadow-lg">
+                <span class="material-symbols-outlined">chevron_left</span>
+              </button>
+              <button
+                class="next-btn size-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary shadow-lg">
+                <span class="material-symbols-outlined">chevron_right</span>
+              </button>
+            </div>
+          </div>
+          <div class="p-10 flex flex-col items-center text-center">
+            <span
+              class="material-symbols-outlined text-primary text-6xl mb-6 block group-hover:scale-110 transition-transform">spa</span>
+            <!-- CUSTOM TEXT: Título Card 3 -->
+            <h4 class="text-2xl font-black mb-4 uppercase tracking-tight">
+              CENTRO DE UÑAS
+            </h4>
+            <p class="text-slate-500 dark:text-slate-400 mb-8 text-base max-w-xs">
+              Galería de estilos y sistema de turnos para que tus clientes luzcan manos impecables.
+            </p>
+            <!-- CUSTOM TEXT: Precio Card 3 -->
+            <p class="text-3xl font-black text-primary mb-6">Desde $40.000</p>
+            <!-- NEW BUTTON: Ver Página -->
+            <a href="https://proyect-centro-de-unas.vercel.app/" target="_blank"
+              class="btn-ripple btn-particles w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-3 rounded-xl font-bold hover:scale-[1.05] transition-transform text-center shadow-lg">VER
+              PAGINA</a>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Términos del Servicio Section / Catálogo -->
-      <section class="py-20 reveal" id="catalogo">
-        <div class="text-center mb-16 px-4">
-          <!-- CUSTOM TEXT: Título catálogo -->
-          <h3
-            class="text-primary font-bold tracking-widest uppercase text-sm mb-4"
-          >
-            MIRA MI PORTAFOLIO
-          </h3>
-          <h2
-            class="text-4xl sm:text-6xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tighter hover:glitch-hover"
-          >
-            <span
-              class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-amber-400 animate-gradient-text"
-              >ACA HAY EJEMPLOS</span
-            ><br />DE LO QUE PUEDE SER TU PAGINA WEB
+    <!-- Incluye Section -->
+    <section class="py-20 border-t border-primary/10 reveal">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8 text-center lg:text-left flex flex-col items-center lg:items-start">
+          <!-- CUSTOM TEXT: Título Incluye -->
+          <h2 class="text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight">
+            INCLUYE
           </h2>
-          <p
-            class="text-xl sm:text-2xl font-bold bg-primary/10 text-primary inline-block px-6 py-2 rounded-2xl mt-6 animate-pulse"
-          >
-            ¡Puedo crear lo que necesites y mucho mas!
-          </p>
+          <ul class="space-y-6 w-full max-w-md lg:max-w-none">
+            <!-- CUSTOM TEXT: Lista de beneficios -->
+            <li class="flex items-center sm:items-start justify-center lg:justify-start gap-4">
+              <span class="material-symbols-outlined text-primary font-bold mt-0.5">check_circle</span>
+              <span class="text-lg text-slate-700 dark:text-slate-300 text-left">Diseño adaptado para móviles y
+                tablets.</span>
+            </li>
+            <li class="flex items-center sm:items-start justify-center lg:justify-start gap-4">
+              <span class="material-symbols-outlined text-primary font-bold mt-0.5">check_circle</span>
+              <span class="text-lg text-slate-700 dark:text-slate-300 text-left">Botón directo a WhatsApp/Redes.</span>
+            </li>
+            <li class="flex items-center sm:items-start justify-center lg:justify-start gap-4">
+              <span class="material-symbols-outlined text-primary font-bold mt-0.5">check_circle</span>
+              <span class="text-lg text-slate-700 dark:text-slate-300 text-left">Secciones clave: Hero, Servicios, FAQ,
+                Contacto.</span>
+            </li>
+            <li class="flex items-center sm:items-start justify-center lg:justify-start gap-4">
+              <span class="material-symbols-outlined text-primary font-bold mt-0.5">check_circle</span>
+              <span class="text-lg text-slate-700 dark:text-slate-300 text-left">Formulario de contacto
+                funcional.</span>
+            </li>
+            <li class="flex items-center sm:items-start justify-center lg:justify-start gap-4">
+              <span class="material-symbols-outlined text-primary font-bold mt-0.5">check_circle</span>
+              <span class="text-lg text-slate-700 dark:text-slate-300 text-left">Entrega rápida en menos de 7
+                días.</span>
+            </li>
+          </ul>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- =========================== -->
-          <!-- Card 1 (Carrusel Veterinaria) -->
-          <!-- =========================== -->
+        <div class="flex justify-center">
           <div
-            class="tilt-card glow-card bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-primary transition-all group shadow-sm hover:shadow-2xl overflow-hidden flex flex-col backdrop-blur-lg bg-white/30 dark:bg-slate-800/30 border-white/30"
-          >
+            class="w-64 h-80 bg-gradient-to-br from-orange-100 to-rose-100 dark:from-orange-900/20 dark:to-rose-900/20 rounded-3xl border-4 border-primary relative overflow-hidden flex flex-col items-center justify-center p-8">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
             <div
-              class="relative aspect-video bg-slate-100 dark:bg-slate-900 flex items-center justify-center group/carousel"
-            >
-              <!-- ============================================== -->
-              <!-- ACA VA IMG 3: CARRUSEL VETERINARIA (IMG 1)     -->
-              <!-- ============================================== -->
-              <img
-                alt="Veterinaria demo 1"
-                class="carousel-img w-full h-full object-cover"
-                src="recursos/vet/vet_1.jpg"
-              />
-
-              <!-- ============================================== -->
-              <!-- ACA VA IMG 4: CARRUSEL VETERINARIA (IMG 2)     -->
-              <!-- ============================================== -->
-              <img
-                alt="Veterinaria demo 2"
-                class="carousel-img w-full h-full object-cover hidden"
-                src="recursos/vet/vet_2.jpg"
-              />
-
-              <img
-                alt="Veterinaria demo 3"
-                class="carousel-img w-full h-full object-cover hidden"
-                src="recursos/vet/vet_3.jpg"
-              />
-
-              <!-- ============================================== -->
-              <!-- ACA VA IMG 5.1: CARRUSEL VETERINARIA (IMG 4)   -->
-              <!-- ============================================== -->
-              <img
-                alt="Veterinaria demo 4"
-                class="carousel-img w-full h-full object-cover hidden"
-                src="recursos/vet/vet_4.jpg"
-              />
-
+              class="absolute top-0 right-0 w-16 h-16 bg-primary transform rotate-45 translate-x-8 -translate-y-8 shadow-lg bg-gradient-to-r from-primary to-orange-500">
+            </div>
+            <span class="material-symbols-outlined text-primary text-9xl relative drop-shadow-2xl">face</span>
+            <div class="mt-4 w-full h-2 bg-primary/30 rounded-full relative overflow-hidden">
               <div
-                class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover/carousel:opacity-100 transition-opacity"
-              >
-                <button
-                  class="prev-btn size-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary shadow-lg"
-                >
-                  <span class="material-symbols-outlined">chevron_left</span>
-                </button>
-                <button
-                  class="next-btn size-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary shadow-lg"
-                >
-                  <span class="material-symbols-outlined">chevron_right</span>
-                </button>
+                class="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent animate-[shimmer_2s_infinite]">
               </div>
             </div>
-            <div class="p-10 flex flex-col items-center text-center">
-              <span
-                class="material-symbols-outlined text-primary text-6xl mb-6 block group-hover:scale-110 transition-transform"
-                >pets</span
-              >
-              <!-- CUSTOM TEXT: Título Card 1 -->
-              <h4 class="text-2xl font-black mb-4 uppercase tracking-tight">
-                VETERINARIAS
-              </h4>
-              <p
-                class="text-slate-500 dark:text-slate-400 mb-8 text-base max-w-xs"
-              >
-                Diseño enfocado en el cuidado animal y agendamiento de turnos
-                optimizado para clínicas veterinarias.
-              </p>
-              <!-- CUSTOM TEXT: Precio Card 1 -->
-              <p class="text-3xl font-black text-primary mb-6">Desde $40.000</p>
-              <!-- NEW BUTTON: Ver Página -->
-              <a
-                href="#"
-                class="btn-ripple btn-particles w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-3 rounded-xl font-bold hover:scale-[1.05] transition-transform text-center shadow-lg"
-                >VER PAGINA</a
-              >
-            </div>
-          </div>
-
-          <!-- =========================== -->
-          <!-- Card 2 (Carrusel Panaderías) -->
-          <!-- =========================== -->
-          <div
-            class="tilt-card glow-card bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-primary transition-all group shadow-sm hover:shadow-2xl overflow-hidden flex flex-col backdrop-blur-lg bg-white/30 dark:bg-slate-800/30 border-white/30"
-          >
-            <div
-              class="relative aspect-video bg-slate-100 dark:bg-slate-900 flex items-center justify-center group/carousel"
-            >
-              <!-- ============================================== -->
-              <!-- ACA VA IMG 6: CARRUSEL PANADERÍAS (IMG 1)      -->
-              <!-- ============================================== -->
-              <img
-                alt="Panaderia demo 1"
-                class="carousel-img w-full h-full object-cover"
-                src="recursos/pan_1.jpg"
-              />
-
-              <!-- ============================================== -->
-              <!-- ACA VA IMG 7: CARRUSEL PANADERÍAS (IMG 2)      -->
-              <!-- ============================================== -->
-              <img
-                alt="Panaderia demo 2"
-                class="carousel-img w-full h-full object-cover hidden"
-                src="recursos/pan_2.jpg"
-              />
-
-              <img
-                alt="Panaderia demo 3"
-                class="carousel-img w-full h-full object-cover hidden"
-                src="recursos/pan_3.jpg"
-              />
-
-              <!-- ============================================== -->
-              <!-- ACA VA IMG 8.1: CARRUSEL PANADERÍAS (IMG 4)    -->
-              <!-- ============================================== -->
-              <img
-                alt="Panaderia demo 4"
-                class="carousel-img w-full h-full object-cover hidden"
-                src="recursos/pan_4.jpg"
-              />
-
-              <div
-                class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover/carousel:opacity-100 transition-opacity"
-              >
-                <button
-                  class="prev-btn size-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary shadow-lg"
-                >
-                  <span class="material-symbols-outlined">chevron_left</span>
-                </button>
-                <button
-                  class="next-btn size-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary shadow-lg"
-                >
-                  <span class="material-symbols-outlined">chevron_right</span>
-                </button>
-              </div>
-            </div>
-            <div class="p-10 flex flex-col items-center text-center">
-              <span
-                class="material-symbols-outlined text-primary text-6xl mb-6 block group-hover:scale-110 transition-transform"
-                >bakery_dining</span
-              >
-              <!-- CUSTOM TEXT: Título Card 2 -->
-              <h4 class="text-2xl font-black mb-4 uppercase tracking-tight">
-                PANADERIAS
-              </h4>
-              <p
-                class="text-slate-500 dark:text-slate-400 mb-8 text-base max-w-xs"
-              >
-                Catálogo visual de productos frescos y sistema de contacto
-                directo por pedido personalizado.
-              </p>
-              <!-- CUSTOM TEXT: Precio Card 2 -->
-              <p class="text-3xl font-black text-primary mb-6">Desde $40.000</p>
-              <!-- NEW BUTTON: Ver Página -->
-              <a
-                href="#"
-                class="btn-ripple btn-particles w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-3 rounded-xl font-bold hover:scale-[1.05] transition-transform text-center shadow-lg"
-                >VER PAGINA</a
-              >
-            </div>
-          </div>
-
-          <!-- =========================== -->
-          <!-- Card 3 (Carrusel Peluquerías)-->
-          <!-- =========================== -->
-          <div
-            class="tilt-card glow-card bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-primary transition-all group shadow-sm hover:shadow-2xl overflow-hidden flex flex-col backdrop-blur-lg bg-white/30 dark:bg-slate-800/30 border-white/30"
-          >
-            <div
-              class="relative aspect-video bg-slate-100 dark:bg-slate-900 flex items-center justify-center group/carousel"
-            >
-              <!-- ============================================== -->
-              <!-- ACA VA IMG 9: CARRUSEL PELUQUERÍAS (IMG 1)     -->
-              <!-- ============================================== -->
-              <img
-                alt="Peluqueria demo 1"
-                class="carousel-img w-full h-full object-cover"
-                src="recursos/pelu_1.jpg"
-              />
-
-              <!-- ============================================== -->
-              <!-- ACA VA IMG 10: CARRUSEL PELUQUERÍAS (IMG 2)    -->
-              <!-- ============================================== -->
-              <img
-                alt="Peluqueria demo 2"
-                class="carousel-img w-full h-full object-cover hidden"
-                src="recursos/pelu_2.jpg"
-              />
-
-              <img
-                alt="Peluqueria demo 3"
-                class="carousel-img w-full h-full object-cover hidden"
-                src="recursos/pelu_3.jpg"
-              />
-
-              <!-- ============================================== -->
-              <!-- ACA VA IMG 11.1: CARRUSEL PELUQUERÍAS (IMG 4)  -->
-              <!-- ============================================== -->
-              <img
-                alt="Peluqueria demo 4"
-                class="carousel-img w-full h-full object-cover hidden"
-                src="recursos/pelu_4.jpg"
-              />
-
-              <div
-                class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover/carousel:opacity-100 transition-opacity"
-              >
-                <button
-                  class="prev-btn size-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary shadow-lg"
-                >
-                  <span class="material-symbols-outlined">chevron_left</span>
-                </button>
-                <button
-                  class="next-btn size-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary shadow-lg"
-                >
-                  <span class="material-symbols-outlined">chevron_right</span>
-                </button>
-              </div>
-            </div>
-            <div class="p-10 flex flex-col items-center text-center">
-              <span
-                class="material-symbols-outlined text-primary text-6xl mb-6 block group-hover:scale-110 transition-transform"
-                >content_cut</span
-              >
-              <!-- CUSTOM TEXT: Título Card 3 -->
-              <h4 class="text-2xl font-black mb-4 uppercase tracking-tight">
-                PELUQUERIAS
-              </h4>
-              <p
-                class="text-slate-500 dark:text-slate-400 mb-8 text-base max-w-xs"
-              >
-                Galería de estilos modernos y botón de WhatsApp integrado para
-                reservas inmediatas.
-              </p>
-              <!-- CUSTOM TEXT: Precio Card 3 -->
-              <p class="text-3xl font-black text-primary mb-6">Desde $40.000</p>
-              <!-- NEW BUTTON: Ver Página -->
-              <a
-                href="#"
-                class="btn-ripple btn-particles w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-3 rounded-xl font-bold hover:scale-[1.05] transition-transform text-center shadow-lg"
-                >VER PAGINA</a
-              >
-            </div>
+            <div class="mt-2 w-3/4 h-2 bg-primary/30 rounded-full relative overflow-hidden"></div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Incluye Section -->
-      <section class="py-20 border-t border-primary/10 reveal">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <!-- Mantenimiento y Soporte Section -->
+    <section id="mantenimiento"
+      class="py-20 bg-orange-50 dark:bg-orange-950/20 rounded-[2rem] px-6 sm:px-16 mb-20 border border-primary/20 backdrop-blur-md shadow-inner reveal">
+      <!-- CUSTOM TEXT: Título Mantenimiento -->
+      <h2
+        class="text-3xl font-black text-slate-900 dark:text-white uppercase mb-12 text-center lg:text-left tracking-tight">
+        MANTENIMIENTO Y SOPORTE
+      </h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="flex flex-col md:flex-row gap-12 items-center lg:items-start">
           <div
-            class="space-y-8 text-center lg:text-left flex flex-col items-center lg:items-start"
-          >
-            <!-- CUSTOM TEXT: Título Incluye -->
-            <h2
-              class="text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight"
-            >
-              INCLUYE
-            </h2>
-            <ul class="space-y-6 w-full max-w-md lg:max-w-none">
-              <!-- CUSTOM TEXT: Lista de beneficios -->
-              <li
-                class="flex items-center sm:items-start justify-center lg:justify-start gap-4"
-              >
-                <span
-                  class="material-symbols-outlined text-primary font-bold mt-0.5"
-                  >check_circle</span
-                >
-                <span
-                  class="text-lg text-slate-700 dark:text-slate-300 text-left"
-                  >Diseño adaptado para móviles y tablets.</span
-                >
-              </li>
-              <li
-                class="flex items-center sm:items-start justify-center lg:justify-start gap-4"
-              >
-                <span
-                  class="material-symbols-outlined text-primary font-bold mt-0.5"
-                  >check_circle</span
-                >
-                <span
-                  class="text-lg text-slate-700 dark:text-slate-300 text-left"
-                  >Botón directo a WhatsApp/Redes.</span
-                >
-              </li>
-              <li
-                class="flex items-center sm:items-start justify-center lg:justify-start gap-4"
-              >
-                <span
-                  class="material-symbols-outlined text-primary font-bold mt-0.5"
-                  >check_circle</span
-                >
-                <span
-                  class="text-lg text-slate-700 dark:text-slate-300 text-left"
-                  >Secciones clave: Hero, Servicios, FAQ, Contacto.</span
-                >
-              </li>
-              <li
-                class="flex items-center sm:items-start justify-center lg:justify-start gap-4"
-              >
-                <span
-                  class="material-symbols-outlined text-primary font-bold mt-0.5"
-                  >check_circle</span
-                >
-                <span
-                  class="text-lg text-slate-700 dark:text-slate-300 text-left"
-                  >Formulario de contacto funcional.</span
-                >
-              </li>
-              <li
-                class="flex items-center sm:items-start justify-center lg:justify-start gap-4"
-              >
-                <span
-                  class="material-symbols-outlined text-primary font-bold mt-0.5"
-                  >check_circle</span
-                >
-                <span
-                  class="text-lg text-slate-700 dark:text-slate-300 text-left"
-                  >Entrega rápida en menos de 7 días.</span
-                >
-              </li>
-            </ul>
+            class="p-8 bg-white dark:bg-slate-800 rounded-3xl shadow-xl shadow-primary/10 border border-orange-100 flex-shrink-0">
+            <span class="material-symbols-outlined text-primary text-7xl">search</span>
           </div>
-          <div class="flex justify-center">
-            <div
-              class="w-64 h-80 bg-gradient-to-br from-orange-100 to-rose-100 dark:from-orange-900/20 dark:to-rose-900/20 rounded-3xl border-4 border-primary relative overflow-hidden flex flex-col items-center justify-center p-8"
-            >
-              <div
-                class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-16 h-16 bg-primary transform rotate-45 translate-x-8 -translate-y-8 shadow-lg bg-gradient-to-r from-primary to-orange-500"
-              ></div>
-              <span
-                class="material-symbols-outlined text-primary text-9xl relative drop-shadow-2xl"
-                >face</span
-              >
-              <div
-                class="mt-4 w-full h-2 bg-primary/30 rounded-full relative overflow-hidden"
-              >
-                <div
-                  class="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent animate-[shimmer_2s_infinite]"
-                ></div>
-              </div>
-              <div
-                class="mt-2 w-3/4 h-2 bg-primary/30 rounded-full relative overflow-hidden"
-              ></div>
-            </div>
-          </div>
+          <ul class="space-y-4 w-full flex flex-col items-center md:items-start text-center md:text-left">
+            <li class="flex flex-col sm:flex-row items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-sm font-bold">check</span>
+              <span class="text-slate-700 dark:text-orange-100">Actualizaciones de seguridad mensuales.</span>
+            </li>
+            <li class="flex flex-col sm:flex-row items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-sm font-bold">check</span>
+              <span class="text-slate-700 dark:text-orange-100">Modificaciones menores de contenido.</span>
+            </li>
+            <li class="flex flex-col sm:flex-row items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-sm font-bold">check</span>
+              <span class="text-slate-700 dark:text-orange-100">Soporte técnico por correo/WhatsApp.</span>
+            </li>
+            <li class="flex flex-col sm:flex-row items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-sm font-bold">check</span>
+              <span class="text-slate-700 dark:text-orange-100">Respaldo de datos semanal.</span>
+            </li>
+          </ul>
         </div>
-      </section>
-
-      <!-- Mantenimiento y Soporte Section -->
-      <section
-        class="py-20 bg-orange-50 dark:bg-orange-950/20 rounded-[2rem] px-6 sm:px-16 mb-20 border border-primary/20 backdrop-blur-md shadow-inner reveal"
-      >
-        <!-- CUSTOM TEXT: Título Mantenimiento -->
-        <h2
-          class="text-3xl font-black text-slate-900 dark:text-white uppercase mb-12 text-center lg:text-left tracking-tight"
-        >
-          MANTENIMIENTO Y SOPORTE
-        </h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div
-            class="flex flex-col md:flex-row gap-12 items-center lg:items-start"
-          >
-            <div
-              class="p-8 bg-white dark:bg-slate-800 rounded-3xl shadow-xl shadow-primary/10 border border-orange-100 flex-shrink-0"
-            >
-              <span class="material-symbols-outlined text-primary text-7xl"
-                >search</span
-              >
+        <div class="flex flex-col items-center gap-6">
+          <div class="flex flex-col items-center gap-4">
+            <div class="p-4 bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-orange-100">
+              <span class="material-symbols-outlined text-primary">cloud_upload</span>
             </div>
-            <ul
-              class="space-y-4 w-full flex flex-col items-center md:items-start text-center md:text-left"
-            >
-              <li class="flex flex-col sm:flex-row items-center gap-3">
-                <span
-                  class="material-symbols-outlined text-primary text-sm font-bold"
-                  >check</span
-                >
-                <span class="text-slate-700 dark:text-orange-100"
-                  >Actualizaciones de seguridad mensuales.</span
-                >
-              </li>
-              <li class="flex flex-col sm:flex-row items-center gap-3">
-                <span
-                  class="material-symbols-outlined text-primary text-sm font-bold"
-                  >check</span
-                >
-                <span class="text-slate-700 dark:text-orange-100"
-                  >Modificaciones menores de contenido.</span
-                >
-              </li>
-              <li class="flex flex-col sm:flex-row items-center gap-3">
-                <span
-                  class="material-symbols-outlined text-primary text-sm font-bold"
-                  >check</span
-                >
-                <span class="text-slate-700 dark:text-orange-100"
-                  >Soporte técnico por correo/WhatsApp.</span
-                >
-              </li>
-              <li class="flex flex-col sm:flex-row items-center gap-3">
-                <span
-                  class="material-symbols-outlined text-primary text-sm font-bold"
-                  >check</span
-                >
-                <span class="text-slate-700 dark:text-orange-100"
-                  >Respaldo de datos semanal.</span
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="flex flex-col items-center gap-6">
-            <div class="flex flex-col items-center gap-4">
-              <div
-                class="p-4 bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-orange-100"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >cloud_upload</span
-                >
-              </div>
-              <div class="w-px h-12 bg-primary/30 relative">
-                <span
-                  class="material-symbols-outlined absolute -bottom-4 left-1/2 -translate-x-1/2 text-primary text-lg"
-                  >arrow_downward</span
-                >
-              </div>
-              <div
-                class="p-4 bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-orange-100"
-              >
-                <span class="material-symbols-outlined text-primary"
-                  >settings_backup_restore</span
-                >
-              </div>
-            </div>
-            <div class="mt-8 text-center">
-              <p class="text-4xl font-black text-primary drop-shadow-sm">
-                $10.000 / mes
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Preguntas Frecuentes Section -->
-      <section class="py-20 reveal" id="preguntas">
-        <h2
-          class="text-4xl font-black text-slate-900 dark:text-white uppercase mb-12 text-center tracking-tight"
-        >
-          PREGUNTAS FRECUENTES
-        </h2>
-        <div class="max-w-4xl mx-auto space-y-4 px-4">
-          <!-- FAQ Item 1: Precio -->
-          <div
-            class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq"
-          >
-            <button
-              class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors"
-            >
+            <div class="w-px h-12 bg-primary/30 relative">
               <span
-                class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors"
-                >¿Por qué el precio es tan bajo?</span
-              >
-              <div
-                class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all"
-              >
-                <span class="material-symbols-outlined text-sm font-bold"
-                  >add</span
-                >
-              </div>
-            </button>
-            <div
-              class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30"
-            >
-              Es un precio de <strong>Campaña Solidaria</strong>. Soy
-              desarrolladora y, debido a la cirugía de urgencia de mi gata
-              Blanca, decidí bonificar mi trabajo un 80% para recaudar los
-              fondos rápido. Es una oportunidad de obtener una web profesional
-              ayudando a una causa real.
+                class="material-symbols-outlined absolute -bottom-4 left-1/2 -translate-x-1/2 text-primary text-lg">arrow_downward</span>
+            </div>
+            <div class="p-4 bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-orange-100">
+              <span class="material-symbols-outlined text-primary">settings_backup_restore</span>
             </div>
           </div>
-
-          <!-- FAQ Item 2: Pagos mensuales -->
-          <div
-            class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq"
-          >
-            <button
-              class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors"
-            >
-              <span
-                class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors"
-                >¿Tengo que pagar algo todos los meses por la página?</span
-              >
-              <div
-                class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all"
-              >
-                <span class="material-symbols-outlined text-sm font-bold"
-                  >add</span
-                >
-              </div>
-            </button>
-            <div
-              class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30"
-            >
-              <strong>No.</strong> Al usar tecnologías modernas, el costo de
-              alojamiento (hosting) es de <strong>$0 para siempre</strong>. El
-              único gasto anual es el dominio (tu nombre .com.ar), que se paga
-              directo a NIC.ar . No hay "letras chicas" ni abonos obligatorios.
-            </div>
-          </div>
-
-          <!-- FAQ Item 3: Requisitos -->
-          <div
-            class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq"
-          >
-            <button
-              class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors"
-            >
-              <span
-                class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors"
-                >¿Qué necesito tener para empezar?</span
-              >
-              <div
-                class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all"
-              >
-                <span class="material-symbols-outlined text-sm font-bold"
-                  >add</span
-                >
-              </div>
-            </button>
-            <div
-              class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30"
-            >
-              <p class="mb-4">Solo tres cosas:</p>
-              <ul class="space-y-2 list-disc pl-5">
-                <li>
-                  El <strong>logo</strong> de tu negocio (si no tenés, usamos un
-                  texto estético).
-                </li>
-                <li>
-                  Las <strong>fotos</strong> de tus productos o servicios.
-                </li>
-                <li>
-                  Los <strong>textos</strong> que quieras incluir (quiénes
-                  somos, qué hacemos y contacto).
-                </li>
-              </ul>
-              <p class="mt-4 italic text-sm">
-                Una vez que tengas esto, completás mi Formulario de
-                Requerimientos y yo me encargo del resto.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ Item 4: Proceso -->
-          <div
-            class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq"
-          >
-            <button
-              class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors"
-            >
-              <span
-                class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors"
-                >¿Cómo es el proceso y cuánto tarda?</span
-              >
-              <div
-                class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all"
-              >
-                <span class="material-symbols-outlined text-sm font-bold"
-                  >add</span
-                >
-              </div>
-            </button>
-            <div
-              class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30"
-            >
-              <p class="mb-3">Es muy simple:</p>
-              <ol class="space-y-2 list-decimal pl-5">
-                <li>Completás el formulario con la info de tu negocio.</li>
-                <li>
-                  Realizás el pago del <strong>50% de seña</strong> para
-                  iniciar.
-                </li>
-                <li>
-                  En <strong>48-72 horas hábiles</strong> te entrego la página
-                  funcionando.
-                </li>
-                <li>Liquidás el 50% restante una vez que estás conforme.</li>
-              </ol>
-            </div>
-          </div>
-
-          <!-- FAQ Item 5: Confianza -->
-          <div
-            class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq"
-          >
-            <button
-              class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors"
-            >
-              <span
-                class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors"
-                >¿Cómo sé que no es una estafa?</span
-              >
-              <div
-                class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all"
-              >
-                <span class="material-symbols-outlined text-sm font-bold"
-                  >add</span
-                >
-              </div>
-            </button>
-            <div
-              class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30"
-            >
-              <p class="mb-3">
-                Entiendo el miedo, por eso mi proceso es
-                <strong>100% transparente</strong>:
-              </p>
-              <ul class="space-y-2">
-                <li class="flex items-start gap-2">
-                  <span
-                    class="material-symbols-outlined text-primary text-sm mt-1"
-                    >verified</span
-                  >
-                  Podés
-                  <a
-                    href="recursos/CV_Jenifer_Cruz_trainee_IT.pdf"
-                    class="text-primary underline font-bold"
-                    download
-                    >descargar mi CV</a
-                  >, ver mi
-                  <a
-                    href="https://www.linkedin.com/in/cruz-jenifer/"
-                    target="_blank"
-                    class="text-primary underline font-bold"
-                    >LinkedIn</a
-                  >
-                  y mi perfil de
-                  <a
-                    href="https://github.com/cruz-jenifer"
-                    target="_blank"
-                    class="text-primary underline font-bold"
-                    >GitHub</a
-                  >
-                  desde esta misma página.
-                </li>
-                <li class="flex items-start gap-2">
-                  <span
-                    class="material-symbols-outlined text-primary text-sm mt-1"
-                    >verified</span
-                  >
-                  El pago es 50/50: no pagás el total hasta que no ves el
-                  trabajo.
-                </li>
-                <li class="flex items-start gap-2">
-                  <span
-                    class="material-symbols-outlined text-primary text-sm mt-1"
-                    >verified</span
-                  >
-                  Tenés a disposición el <strong>presupuesto sellado</strong> de
-                  la veterinaria de Blanca.
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- FAQ Item 6: Mantenimiento -->
-          <div
-            class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq"
-          >
-            <button
-              class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors"
-            >
-              <span
-                class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors"
-                >¿Ofrecés servicio de mantenimiento?</span
-              >
-              <div
-                class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all"
-              >
-                <span class="material-symbols-outlined text-sm font-bold"
-                  >add</span
-                >
-              </div>
-            </button>
-            <div
-              class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30"
-            >
-              <strong>Sí.</strong> Aunque la página no tiene costos fijos, si
-              querés que yo me encargue de cambiar precios, fotos o textos todos
-              los meses, ofrezco un abono de mantenimiento por
-              <strong>$10.000/mes</strong>. Es opcional y podés cancelarlo
-              cuando quieras.
-            </div>
-          </div>
-
-          <!-- FAQ Item 7: Ayuda sin web -->
-          <div
-            class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq"
-          >
-            <button
-              class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors"
-            >
-              <span
-                class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors"
-                >¿Puedo ayudarte de otra manera si ya tengo web?</span
-              >
-              <div
-                class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all"
-              >
-                <span class="material-symbols-outlined text-sm font-bold"
-                  >add</span
-                >
-              </div>
-            </button>
-            <div
-              class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30"
-            >
-              <strong>¡Claro que sí!</strong> Si sabés de alguna empresa o
-              agencia que busque una IT Trainee o Desarrolladora Junior, podés
-              descargar mi CV en la sección correspondiente y recomendarme.
-              Conseguir un empleo estable es mi meta final para asegurar el
-              bienestar de Blanca a largo plazo.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contacto Section -->
-      <section
-        class="py-20 border-t border-primary/10 mb-12 reveal"
-        id="contacto"
-      >
-        <h2
-          class="text-4xl font-black text-slate-900 dark:text-white uppercase mb-4 text-center tracking-tight"
-        >
-          CONTACTO
-        </h2>
-        <p class="text-center text-slate-600 dark:text-slate-400 mb-16 text-lg">
-          Demos el primer paso para tu nueva web y ayudemos a Blanca.
-        </p>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-          <div
-            class="flex flex-col gap-6 order-2 lg:order-1 items-center lg:items-start w-full"
-          >
-            <!-- CUSTOM LINK: Link de WhatsApp -->
-            <a
-              href="https://wa.me/1133105995"
-              target="_blank"
-              class="btn-ripple btn-particles w-full sm:w-auto bg-[#25D366] text-white py-4 px-6 rounded-xl font-bold flex flex-col sm:flex-row items-center justify-center gap-3 shadow-lg hover:scale-[1.02] transition-transform animate-pulse-glow shadow-green-500/20 text-center"
-            >
-              <i class="fa-brands fa-whatsapp text-3xl sm:text-2xl"></i> AGENDAR
-              Y CONTRATAR PROYECTO
-            </a>
-            <div
-              class="flex flex-row flex-wrap justify-center lg:justify-start gap-3 w-full"
-            >
-              <!-- CUSTOM LINK: Redes Sociales -->
-              <a
-                href="https://www.instagram.com/webs.solidarias.blanca?igsh=MTVjcDRxbTI4eHlxZw=="
-                target="_blank"
-                class="flex-1 min-w-[120px] sm:flex-none sm:w-auto px-6 border border-slate-200 dark:border-slate-700 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm font-medium uppercase tracking-wider backdrop-blur-sm bg-white/10 text-center"
-                >instagram</a
-              >
-              <a
-                href="https://www.linkedin.com/in/cruz-jenifer/"
-                target="_blank"
-                class="flex-1 min-w-[120px] sm:flex-none sm:w-auto px-6 border border-slate-200 dark:border-slate-700 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm font-medium uppercase tracking-wider backdrop-blur-sm bg-white/10 text-center"
-                >linkedin</a
-              >
-              <a
-                href="https://github.com/cruz-jenifer"
-                target="_blank"
-                class="flex-1 min-w-[120px] sm:flex-none sm:w-auto px-6 border border-slate-200 dark:border-slate-700 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm font-medium uppercase tracking-wider backdrop-blur-sm bg-white/10 text-center"
-                >github</a
-              >
-            </div>
-          </div>
-
-          <div class="flex justify-center order-1 lg:order-2">
-            <div
-              class="size-64 sm:size-80 rounded-full bg-gradient-to-tr from-orange-200 to-rose-200 dark:from-orange-900/40 dark:to-rose-900/40 border-8 border-primary/20 flex items-center justify-center relative overflow-hidden group shadow-2xl"
-            >
-              <!-- ============================================== -->
-              <!-- ACA VA IMG 12: IMAGEN SECCIÓN CONTACTO         -->
-              <!-- ============================================== -->
-              <img
-                class="w-full h-full object-cover animate-floating animate-parallax clip-reveal"
-                data-speed="0.1"
-                data-alt="Contact section representative image"
-                src="recursos/contacto_main.jpeg"
-              />
-              <div
-                class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-r from-primary to-orange-500"
-              ></div>
-            </div>
-          </div>
-
-          <div class="flex flex-col items-center lg:items-end gap-6 order-3">
-            <!-- CUSTOM LINK: Link a CV -->
-            <a
-              href="recursos/CV_Jenifer_Cruz_trainee_IT.pdf"
-              target="_blank"
-              class="bg-primary text-white size-20 rounded-2xl font-black text-2xl shadow-xl shadow-primary/30 hover:rotate-12 transition-transform hover:shadow-primary/40 hover:scale-105 flex items-center justify-center active:scale-95 bg-gradient-to-r from-primary to-orange-500"
-              download
-              >cv</a
-            >
-            <!-- CUSTOM TEXT: Texto de disponibilidad -->
-            <p
-              class="text-xs text-slate-400 dark:text-slate-500 max-w-[200px] text-center lg:text-right"
-            >
-              Proyecto personal con fines benéficos. Disponibilidad inmediata
-              para presupuestos.
+          <div class="mt-8 text-center">
+            <p class="text-4xl font-black text-primary drop-shadow-sm">
+              $10.000 / mes
             </p>
           </div>
         </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 dark:bg-black py-12">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-        <p class="text-slate-400 text-sm font-medium">
-          © 2026 WEB SOLIDARIA - Desarrollado con
-          <span class="text-accent">❤️</span> por la salud de Blanca
-        </p>
       </div>
-    </footer>
+    </section>
 
-    <!-- Lógica de Interactividad JS -->
-    <script src="app.js"></script>
-  </body>
+    <!-- Preguntas Frecuentes Section -->
+    <section class="py-20 reveal" id="preguntas">
+      <h2 class="text-4xl font-black text-slate-900 dark:text-white uppercase mb-12 text-center tracking-tight">
+        PREGUNTAS FRECUENTES
+      </h2>
+      <div class="max-w-4xl mx-auto space-y-4 px-4">
+        <!-- FAQ Item 1: Precio -->
+        <div
+          class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq">
+          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors">
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors">¿Por
+              qué el precio es tan bajo?</span>
+            <div
+              class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all">
+              <span class="material-symbols-outlined text-sm font-bold">add</span>
+            </div>
+          </button>
+          <div
+            class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30">
+            Es un precio de <strong>Campaña Solidaria</strong>. Soy
+            desarrolladora y, debido a la cirugía de urgencia de mi gata
+            Blanca, decidí bonificar mi trabajo un 80% para recaudar los
+            fondos rápido. Es una oportunidad de obtener una web profesional
+            ayudando a una causa real.
+          </div>
+        </div>
+
+        <!-- FAQ Item 2: Pagos mensuales -->
+        <div
+          class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq">
+          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors">
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors">¿Tengo
+              que pagar algo todos los meses por la página?</span>
+            <div
+              class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all">
+              <span class="material-symbols-outlined text-sm font-bold">add</span>
+            </div>
+          </button>
+          <div
+            class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30">
+            <strong>No.</strong> Al usar tecnologías modernas, el costo de
+            alojamiento (hosting) es de <strong>$0 para siempre</strong>. El
+            único gasto anual es el dominio (tu nombre .com.ar), que se paga
+            directo a NIC.ar . No hay "letras chicas" ni abonos obligatorios.
+          </div>
+        </div>
+
+        <!-- FAQ Item 3: Requisitos -->
+        <div
+          class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq">
+          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors">
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors">¿Qué
+              necesito tener para empezar?</span>
+            <div
+              class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all">
+              <span class="material-symbols-outlined text-sm font-bold">add</span>
+            </div>
+          </button>
+          <div
+            class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30">
+            <p class="mb-4">Solo tres cosas:</p>
+            <ul class="space-y-2 list-disc pl-5">
+              <li>
+                El <strong>logo</strong> de tu negocio (si no tenés, usamos un
+                texto estético).
+              </li>
+              <li>
+                Las <strong>fotos</strong> de tus productos o servicios.
+              </li>
+              <li>
+                Los <strong>textos</strong> que quieras incluir (quiénes
+                somos, qué hacemos y contacto).
+              </li>
+            </ul>
+            <p class="mt-4 italic text-sm">
+              Una vez que tengas esto, completás mi Formulario de
+              Requerimientos y yo me encargo del resto.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4: Proceso -->
+        <div
+          class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq">
+          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors">
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors">¿Cómo
+              es el proceso y cuánto tarda?</span>
+            <div
+              class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all">
+              <span class="material-symbols-outlined text-sm font-bold">add</span>
+            </div>
+          </button>
+          <div
+            class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30">
+            <p class="mb-3">Es muy simple:</p>
+            <ol class="space-y-2 list-decimal pl-5">
+              <li>Completás el formulario con la info de tu negocio.</li>
+              <li>
+                Realizás el pago del <strong>50% de seña</strong> para
+                iniciar.
+              </li>
+              <li>
+                En <strong>48-72 horas hábiles</strong> te entrego la página
+                funcionando.
+              </li>
+              <li>Liquidás el 50% restante una vez que estás conforme.</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5: Confianza -->
+        <div
+          class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq">
+          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors">
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors">¿Cómo
+              sé que no es una estafa?</span>
+            <div
+              class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all">
+              <span class="material-symbols-outlined text-sm font-bold">add</span>
+            </div>
+          </button>
+          <div
+            class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30">
+            <p class="mb-3">
+              Entiendo el miedo, por eso mi proceso es
+              <strong>100% transparente</strong>:
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-primary text-sm mt-1">verified</span>
+                Podés
+                <a href="recursos/CV_Jenifer_Cruz_trainee_IT.pdf" class="text-primary underline font-bold"
+                  download>descargar mi CV</a>, ver mi
+                <a href="https://www.linkedin.com/in/cruz-jenifer/" target="_blank"
+                  class="text-primary underline font-bold">LinkedIn</a>
+                y mi perfil de
+                <a href="https://github.com/cruz-jenifer" target="_blank"
+                  class="text-primary underline font-bold">GitHub</a>
+                desde esta misma página.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-primary text-sm mt-1">verified</span>
+                El pago es 50/50: no pagás el total hasta que no ves el
+                trabajo.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-primary text-sm mt-1">verified</span>
+                Tenés a disposición el <strong>presupuesto sellado</strong> de
+                la veterinaria de Blanca.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6: Mantenimiento -->
+        <div
+          class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq">
+          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors">
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors">¿Ofrecés
+              servicio de mantenimiento?</span>
+            <div
+              class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all">
+              <span class="material-symbols-outlined text-sm font-bold">add</span>
+            </div>
+          </button>
+          <div
+            class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30">
+            <strong>Sí.</strong> Aunque la página no tiene costos fijos, si
+            querés que yo me encargue de cambiar precios, fotos o textos todos
+            los meses, ofrezco un abono de mantenimiento por
+            <strong>$10.000/mes</strong>. Es opcional y podés cancelarlo
+            cuando quieras.
+          </div>
+        </div>
+
+        <!-- FAQ Item 7: Ayuda sin web -->
+        <div
+          class="bg-white dark:bg-slate-800/40 border-2 border-slate-100 dark:border-slate-700/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group/faq">
+          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors">
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-lg group-hover/faq:text-primary transition-colors">¿Puedo
+              ayudarte de otra manera si ya tengo web?</span>
+            <div
+              class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover/faq:bg-primary group-hover/faq:text-white transition-all">
+              <span class="material-symbols-outlined text-sm font-bold">add</span>
+            </div>
+          </button>
+          <div
+            class="faq-content hidden p-6 pt-2 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-700/30">
+            <strong>¡Claro que sí!</strong> Si sabés de alguna empresa o
+            agencia que busque una IT Trainee o Desarrolladora Junior, podés
+            descargar mi CV en la sección correspondiente y recomendarme.
+            Conseguir un empleo estable es mi meta final para asegurar el
+            bienestar de Blanca a largo plazo.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section class="py-20 border-t border-primary/10 mb-12 reveal" id="contacto">
+      <h2 class="text-4xl font-black text-slate-900 dark:text-white uppercase mb-4 text-center tracking-tight">
+        CONTACTO
+      </h2>
+      <p class="text-center text-slate-600 dark:text-slate-400 mb-16 text-lg">
+        Demos el primer paso para tu nueva web y ayudemos a Blanca.
+      </p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+        <div class="flex flex-col gap-6 order-2 lg:order-1 items-center lg:items-start w-full">
+          <!-- CUSTOM LINK: Link de WhatsApp -->
+          <a href="https://wa.me/1133105995" target="_blank"
+            class="btn-ripple btn-particles w-full sm:w-auto bg-[#25D366] text-white py-4 px-6 rounded-xl font-bold flex flex-col sm:flex-row items-center justify-center gap-3 shadow-lg hover:scale-[1.02] transition-transform animate-pulse-glow shadow-green-500/20 text-center">
+            <i class="fa-brands fa-whatsapp text-3xl sm:text-2xl"></i> AGENDAR
+            Y CONTRATAR PROYECTO
+          </a>
+          <div class="flex flex-row flex-wrap justify-center lg:justify-start gap-3 w-full">
+            <!-- CUSTOM LINK: Redes Sociales -->
+            <a href="https://www.instagram.com/webs.solidarias.blanca?igsh=MTVjcDRxbTI4eHlxZw==" target="_blank"
+              class="flex-1 min-w-[120px] sm:flex-none sm:w-auto px-6 border border-slate-200 dark:border-slate-700 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm font-medium uppercase tracking-wider backdrop-blur-sm bg-white/10 text-center">instagram</a>
+            <a href="https://www.linkedin.com/in/cruz-jenifer/" target="_blank"
+              class="flex-1 min-w-[120px] sm:flex-none sm:w-auto px-6 border border-slate-200 dark:border-slate-700 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm font-medium uppercase tracking-wider backdrop-blur-sm bg-white/10 text-center">linkedin</a>
+            <a href="https://github.com/cruz-jenifer" target="_blank"
+              class="flex-1 min-w-[120px] sm:flex-none sm:w-auto px-6 border border-slate-200 dark:border-slate-700 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm font-medium uppercase tracking-wider backdrop-blur-sm bg-white/10 text-center">github</a>
+          </div>
+        </div>
+
+        <div class="flex justify-center order-1 lg:order-2">
+          <div
+            class="size-64 sm:size-80 rounded-full bg-gradient-to-tr from-orange-200 to-rose-200 dark:from-orange-900/40 dark:to-rose-900/40 border-8 border-primary/20 flex items-center justify-center relative overflow-hidden group shadow-2xl">
+            <!-- ============================================== -->
+            <!-- ACA VA IMG 12: IMAGEN SECCIÓN CONTACTO         -->
+            <!-- ============================================== -->
+            <img class="w-full h-full object-cover animate-floating animate-parallax clip-reveal" data-speed="0.1"
+              data-alt="Contact section representative image" src="recursos/contacto_main.jpeg" />
+            <div
+              class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-r from-primary to-orange-500">
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center lg:items-end gap-6 order-3">
+          <!-- CUSTOM LINK: Link a CV -->
+          <a href="recursos/CV_Jenifer_Cruz_trainee_IT.pdf" target="_blank"
+            class="bg-primary text-white size-20 rounded-2xl font-black text-2xl shadow-xl shadow-primary/30 hover:rotate-12 transition-transform hover:shadow-primary/40 hover:scale-105 flex items-center justify-center active:scale-95 bg-gradient-to-r from-primary to-orange-500"
+            download>cv</a>
+          <!-- CUSTOM TEXT: Texto de disponibilidad -->
+          <p class="text-xs text-slate-400 dark:text-slate-500 max-w-[200px] text-center lg:text-right">
+            Proyecto personal con fines benéficos. Disponibilidad inmediata
+            para presupuestos.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 dark:bg-black py-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-slate-400 text-sm font-medium">
+        © 2026 WEB SOLIDARIA - Desarrollado con
+        <span class="text-accent">❤️</span> por la salud de Blanca
+      </p>
+    </div>
+  </footer>
+
+  <!-- Lógica de Interactividad JS -->
+  <script src="app.js"></script>
+</body>
+
 </html>
